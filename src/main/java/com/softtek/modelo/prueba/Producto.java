@@ -1,4 +1,4 @@
-package com.softtek.modelo;
+package com.softtek.modelo.prueba;
 
 import lombok.*;
 
