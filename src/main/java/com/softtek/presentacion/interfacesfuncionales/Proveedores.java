@@ -10,13 +10,14 @@ public class Proveedores {
         apartado1();
         apartado2();
         apartado3();
+        apartado4();
     }
 
     public static void apartado1() {
         System.out.println("Apartado 1");
         Supplier<Integer> aleatorio = () -> {
             Random random = new Random();
-            int numeroAleatorio = random.nextInt(5);
+            int numeroAleatorio = random.nextInt(5, 10);
             return numeroAleatorio;
         };
         System.out.println(aleatorio.get());
@@ -39,6 +40,13 @@ public class Proveedores {
         System.out.println("Apartado 3");
         Supplier<LocalDateTime> fecha = () -> LocalDateTime.now();
         System.out.println(fecha.get());
+        System.out.println(" ");
+    }
+
+    public static void apartado4() {
+        System.out.println("Apartado 4");
+        Supplier<String> vacia = () -> "";
+        System.out.println(vacia.get());
         System.out.println(" ");
     }
 }
