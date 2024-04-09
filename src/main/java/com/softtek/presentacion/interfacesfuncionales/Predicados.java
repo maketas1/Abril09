@@ -8,6 +8,7 @@ public class Predicados {
         apartado2();
         apartado3();
         apartado4();
+        apartado5();
     }
 
     public static void apartado1() {
@@ -40,5 +41,24 @@ public class Predicados {
         boolean resultado = mayor.test(0);
         System.out.println("Es mayor que 5?" + resultado);
         System.out.println(" ");
+    }
+
+    public static void apartado5() {
+        System.out.println("Apartado 5");
+        Predicate<Integer> esPrimo = x -> {
+            boolean primo = false;
+            int cont = 0;
+            for (int i = 0; i <= x; i++) {
+                if (x%i==0) {
+                    cont++;
+                }
+            }
+            if (cont == 2) {
+                primo = true;
+            }
+            return primo;
+        };
+        boolean resultado = esPrimo.test(7);
+        System.out.println(resultado);
     }
 }

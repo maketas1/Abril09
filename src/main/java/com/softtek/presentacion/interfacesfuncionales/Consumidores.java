@@ -2,6 +2,7 @@ package com.softtek.presentacion.interfacesfuncionales;
 
 import com.softtek.modelo.interfacesfuncionales.Producto;
 
+import javax.swing.*;
 import java.io.*;
 import java.util.Scanner;
 import java.util.function.Consumer;
@@ -42,21 +43,8 @@ public class Consumidores {
 
     public static void apartado4() {
         System.out.println("Apartado 4");
-        Consumer<File> leer = x -> {
-            Scanner scanner = null;
-            try {
-                scanner = new Scanner(x);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-            while (scanner.hasNextLine()) {
-                String linea = scanner.nextLine();
-                System.out.println(linea);
-            }
-            scanner.close();
-        };
-        File fichero = new File("fichero/apartado4.txt");
-        leer.accept(fichero);
+        Consumer<String> dialogo = x -> JOptionPane.showMessageDialog(null, x);
+        dialogo.accept("Buenas tardes");
         System.out.println(" ");
     }
 
